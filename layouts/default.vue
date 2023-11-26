@@ -17,10 +17,11 @@ console.log(nav);
         <NuxtPage />
     </div>
 </template>
-<style scoped>
-:root{
-    padding: 0;
+<style>
+body{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 .navigation{
     display: flex;
