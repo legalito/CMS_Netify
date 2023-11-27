@@ -8,4 +8,4 @@ console.log('This is admin page')
 
 <template> 
     <p>Blog - {{ $route.params.test }}</p>
-    </template>
+</template>

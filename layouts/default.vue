@@ -1,7 +1,6 @@
 <script setup>
 import navigations from "@/cms/queries/navigation";
 const {data:nav, error:errors} = await useLazyAsyncQuery(navigations);
-console.log(nav);
 </script>
 <template>
     <div>
@@ -15,6 +14,7 @@ console.log(nav);
             </ul>
         </div>
         <NuxtPage />
+        <Footer />
     </div>
 </template>
 <style>

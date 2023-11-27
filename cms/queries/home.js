@@ -1,30 +1,50 @@
 export default gql`
-query Home{
-    allHomes {
+query home{
+  home {
+    imageDeFond {
+      url
+    }
+    titreHero
+    titreToutLesArticles
+    listesDesArticles {
       id
-      paragrapheSectionTextGauche
-      titre
-      titreSectionTextGauche
-      titreToutLesArticles
-      imageDeFond {
-        title
-        url
-      }
-      imageDroite {
-        url
-        title
-      }
-      listesDesArticles {
-        corpsDeLArticle
-        titreArticle
+      articleBody {
+        articleTitre
+        articleSlug
+        paragraphe {
+          value
+          links
+          blocks
+        }
+        _publishedAt
+        auteur {
+          _createdAt
+          nomPrenom
+          profileImage {
+            url
+          }
+        }
         id
-        imageArticle {
+        image {
           url
-          title
         }
       }
+    }
+    paragraphe {
+      blocks
+      links
+      value
+    }
+    sectionTextGauche {
+      titreDeLaSection
       paragraphe {
+        links
+        blocks
         value
       }
+      image {
+        url
+      }
     }
-  }`;
+  }
+}`;
