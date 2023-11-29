@@ -4,32 +4,35 @@ query home{
     imageDeFond {
       url
     }
-    titreHero
-    titreToutLesArticles
     listesDesArticles {
+      slug
+      titre
       id
-      articleBody {
-        articleTitre
-        articleSlug
-        paragraphe {
-          value
-          links
-          blocks
+      author {
+        nomPrenom
+        profileImage {
+          url
         }
-        _publishedAt
-        auteur {
-          _createdAt
-          nomPrenom
-          profileImage {
-            url
-          }
-        }
-        id
+      }
+      image {
+        url
+      }
+      paragraphe {
+        value
+        links
+        blocks
+      }
+      seoMetadata {
+        description
+        title
+        twitterCard
         image {
           url
         }
       }
     }
+    titreHero
+    titreToutLesArticles
     paragraphe {
       blocks
       links
@@ -37,13 +40,13 @@ query home{
     }
     sectionTextGauche {
       titreDeLaSection
-      paragraphe {
-        links
-        blocks
-        value
-      }
       image {
         url
+      }
+      paragraphe {
+        value
+        links
+        blocks
       }
     }
   }

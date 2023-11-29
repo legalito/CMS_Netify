@@ -1,17 +1,22 @@
 export default gql`
-query Articles{
-    
-    allArticles {
-      id
-      title
-      _status
-      _firstPublishedAt
+query Article($slug: String!) {
+  article(filter: {slug: {eq: $slug}}) {
+    author {
+      nomPrenom
+      profileImage {
+        url
+      }
     }
-    _allArticlesMeta {
-      count
+    id
+    slug
+    titre
+    image {
+      url
     }
-    article {
-      title
-      content
+    paragraphe {
+      value
+      links
+      blocks
     }
-  }`;
+  }
+}`;

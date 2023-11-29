@@ -14,7 +14,7 @@ const {data:nav, error:errors} = await useLazyAsyncQuery(navigations);
             </ul>
         </div>
         <NuxtPage />
-        <Footer />
+        <!-- <Footer /> -->
     </div>
 </template>
 <style>
