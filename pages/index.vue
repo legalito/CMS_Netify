@@ -19,7 +19,7 @@ const formatDate = (isoDateString) => {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ home.home.seo.title }}</title>
-    <meta name="description" content="{{ home.home.seo.description }}">
+    <meta name="description" :content="home.home.seo.description">
   </head>
   </header>
   
