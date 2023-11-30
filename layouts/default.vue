@@ -5,16 +5,15 @@ const {data:nav, error:errors} = await useLazyAsyncQuery(navigations);
 <template>
     <div>
         <div class="navigation">
-            <h1>Vue 3 + Netlify CMS</h1>
-            
+            <img class="logo" :src="`${nav.navigation.logo.url}`">
             <ul>
-                <li v-for="(item, index) in nav.allNavigations" :key="index">
-                    <a href="item.lien"></a>{{ item.navLabel }}
+                <li v-for="(item, index) in nav.navigation.newmenu" :key="index">
+                    <a :href="`${item.lien}`">{{ item.menu }}</a>
                 </li>
             </ul>
         </div>
         <NuxtPage />
-        <!-- <Footer /> -->
+        <Footer /> 
     </div>
 </template>
 <style>
@@ -23,13 +22,18 @@ body{
     padding: 0;
     box-sizing: border-box;
 }
+.logo{
+    width: auto;
+    height: 50px;
+}
 .navigation{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000;
+    background-color: #fff;
     color: #fff;
     padding: 1rem;
+    height: 77px;
 }
 ul {
     display: flex;
@@ -38,10 +42,16 @@ ul {
 }
 ul li {
     list-style: none;
+    font-size: 22px;
+    color: #000;
 }
 ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #000;
+}
+h1 {
+    font-size: 22px;
+    color: #000;
 }
 
 </style>

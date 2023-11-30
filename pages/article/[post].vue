@@ -12,7 +12,6 @@ console.log(article);
 <template>
   <div class="article-container">
     <header>
-        {{ article.article.author[0].nomPrenom }}
       <h1>{{ article.article.titre }}</h1>
       <div class="author-info">
         <img :src="article.article.author[0].profileImage.url" alt="Author Image" class="roundImageAuthor" />
@@ -65,7 +64,17 @@ header {
 .article-content {
   margin-top: 20px;
 }
-
+.roundImageAuthor{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+.article-author{
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
 /* Add more styling as needed */
 
 </style>

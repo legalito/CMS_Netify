@@ -22,7 +22,6 @@ const formatDate = (isoDateString) => {
       <h2 class="section-text">{{ home.home.titreHero }}</h2>
     </div>
   </div>
-  {{ home.home.listesDesArticles }}
   <div class="section-textLeft">
     <div class="text-content">
       <h2>{{ home.home.sectionTextGauche[0].titreDeLaSection }}</h2>
@@ -49,11 +48,11 @@ const formatDate = (isoDateString) => {
   <div>
     <h2>{{ home.home.titreToutLesArticles }}</h2>
     <div class="section-AllArticles-articles">
-      <div class="section-AllArticles-articles-article" v-for="article in home.listesDesArticles" :key="article.id">
+      <div class="section-AllArticles-articles-article" v-for="article in home.home.listesDesArticles" :key="article.id">
         <img :src="article.image.url" alt="imageArticle" />
         <div class="article-author">
-          <img :src="article.author.profileImage.url" alt="imageAuteur" class="roundImageAuthor" />
-          <p>{{ article.author.nomPrenom }}</p>
+          <img :src="article.author[0].profileImage.url" alt="imageAuteur" class="roundImageAuthor" />
+          <p>{{ article.author[0].nomPrenom }}</p>
         </div>
         <h3>{{ article.titre }}</h3>
         <div v-if="article.paragraphe && article.paragraphe.value">
@@ -63,7 +62,8 @@ const formatDate = (isoDateString) => {
             </p>
             <code v-if="paragraph.type === 'code'">{{ paragraph.code }}</code>
           </div>
-        </div>
+        </div> 
+        <a :href="`/article/${article.slug}`">Lire la suite</a>
       </div>
     </div>
   </div>

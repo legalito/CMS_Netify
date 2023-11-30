@@ -1,7 +1,12 @@
 export default gql`
 query navigations {
-    allNavigations {
+  navigation {
+    newmenu {
+      menu
       lien
-      navLabel
-    }   
-  }`;
+    }
+    logo {
+      url
+    }
+  }
+}`;

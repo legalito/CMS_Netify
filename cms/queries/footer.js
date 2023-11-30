@@ -1,24 +1,28 @@
 export default gql`
 query footerMenu {
-    footerMenu {
-      mapWebsite {
-        ... on HomeRecord {
-          id
-          titreHero
-        }
-        ... on ToutLesArticleRecord {
-          id
-        }
+  footerMenu {
+    mapWebsite {
+      ... on HomeRecord {
+        id
+        titreHero
+        slug
+        titreToutLesArticles
       }
-      logoFooter {
-        url
-      }
-      listesDesArticles {
-        articleBody {
-          articleTitre
-          id
+      ... on ToutLesArticleRecord {
+        id
+        listeArticle {
+          titre
+          slug
         }
       }
     }
+    logoFooter {
+      url
+    }
+    listesDesArticles {
+      titre
+      slug
+      id
+    }
   }
-`;
+}`;

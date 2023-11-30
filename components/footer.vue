@@ -1,33 +1,33 @@
 <script setup>
   import FooterMenu from "@/cms/queries/footer";
   const { data: footerMenu, error: footerError } = await useLazyAsyncQuery(FooterMenu);
-  console.log(footerMenu);
 </script>
 <template>
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-logo">
-          <img :src="footerMenu.footerMenu.logoFooter.url" alt="Logo" />
-        </div>
-        <div class="footer-links">
-          <h4>Liens Utiles</h4>
-          <ul>
-            <li v-for="link in footerMenu.footerMenu.mapWebsite" :key="link.id">
-              <router-link :to="`/${link.id}`">{{ link.titreHero || 'Accueil' }}</router-link>
-            </li>
-          </ul>
-        </div>
-        <div class="footer-articles">
-          <h4>Derniers Articles</h4>
-          <ul>
-            <li v-for="article in footerMenu.footerMenu.listesDesArticles" :key="article.id">
-              <router-link :to="`/article/${article.id}`">{{ article.articleBody.articleTitre }}</router-link>
-            </li>
-          </ul>
-        </div>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img :src="footerMenu.footerMenu.logoFooter.url" alt="Logo" />
       </div>
-    </footer>
-  </template>
+      <div class="footer-links">
+        <h4>Liens Utiles</h4>
+        <ul>
+          <li v-for="link in footerMenu.footerMenu.mapWebsite" :key="link.id">
+            <a :href="`/${link.slug}`">{{ link.titreHero || 'Accueil' }}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-articles">
+        <h4>Derniers Articles</h4>
+        <ul>
+          <li v-for="article in footerMenu.footerMenu.listesDesArticles" :key="article.id">
+            <a :href="`/article/${article.slug}`">{{ article.titre }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</template>
+
   
   <style scoped>
   .footer {
