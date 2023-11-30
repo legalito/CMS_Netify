@@ -17,7 +17,7 @@ console.log(article);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ article.article.seoMetadata.title }}</title>
-    <meta name="description" content="{{ article.article.seoMetadata.description }}">
+    <meta name="description" :content=" article.article.seoMetadata.description">
   </head>
       <h1>{{ article.article.titre }}</h1>
       <div class="author-info">
