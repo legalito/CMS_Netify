@@ -1,6 +1,10 @@
 export default gql`
 query Article($slug: String!) {
   article(filter: {slug: {eq: $slug}}) {
+    seoMetadata {
+      description
+      title
+    }
     author {
       nomPrenom
       profileImage {

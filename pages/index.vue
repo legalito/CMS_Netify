@@ -14,6 +14,15 @@ const formatDate = (isoDateString) => {
 </script>
 
 <template>
+  <header>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ home.home.seo.title }}</title>
+    <meta name="description" content="{{ home.home.seo.description }}">
+  </head>
+  </header>
+  
   <div class="section-container">
     <div
       :style="{ backgroundImage: 'url(' + home.home.imageDeFond.url + ')' }"

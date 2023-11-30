@@ -10,8 +10,15 @@ console.log(slug);
 console.log(article);
 </script>
 <template>
+  
   <div class="article-container">
     <header>
+      <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ article.article.seoMetadata.title }}</title>
+    <meta name="description" content="{{ article.article.seoMetadata.description }}">
+  </head>
       <h1>{{ article.article.titre }}</h1>
       <div class="author-info">
         <img :src="article.article.author[0].profileImage.url" alt="Author Image" class="roundImageAuthor" />

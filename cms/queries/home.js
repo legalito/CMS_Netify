@@ -4,6 +4,10 @@ query home{
     imageDeFond {
       url
     }
+    seo {
+      description
+      title
+    }
     listesDesArticles {
       slug
       titre
